@@ -1,4 +1,4 @@
-# Express.js JWT-based API Starter
+# TypeScript based Express.js API Starter
 
 ## Introduction
 This repository is a future-proof starter for building backend API. It uses all the latest versions of packages.

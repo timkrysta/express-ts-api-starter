@@ -118,17 +118,13 @@ UserSchema.methods.generateJWT = function (): string {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const user: IUserDocument = this;
 
-    const today = new Date();
-    const expirationDate = new Date(today);
-    expirationDate.setDate(today.getDate() + 60);
-
     const jwtPayload: IJwtPayload = {
         _id: user._id,
         email: user.email,
     };
 
     const signOptions = {
-        expiresIn: parseInt(String(expirationDate.getTime() / 1000), 10),
+        expiresIn: '15m',
     };
 
     return jwt.sign(jwtPayload, process.env.JWT_SECRET, signOptions);
